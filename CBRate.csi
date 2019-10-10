@@ -1,0 +1,5 @@
+[History]
+1=#P0#=mb	#P1#=Timer1_Timer	#P2#=CBRate/frmMain/Timer1_Timer	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20191010165430	#P7#=0	#P8#=3	.
+2=#P0#=mb	#P1#=fnSetRateCBDBSQL	#P2#=CBRate/frmMain/fnSetRateCBDBSQL	#P3#=	#P4#=	#P5#=MembMethodPrivate	#P6#=20191010165254	#P7#=0	#P8#=-2	.
+3=#P0#=mb	#P1#=fnRateCBDBSQL	#P2#=CBRate/frmMain/fnRateCBDBSQL	#P3#=	#P4#=	#P5#=MembMethodPrivate	#P6#=20191010164631	#P7#=0	#P8#=19	.
+4=#P0#=mb	#P1#=fnFind	#P2#=CBRate/frmMain/fnFind	#P3#=	#P4#=	#P5#=MembMethodPrivate	#P6#=20191010160831	#P7#=0	#P8#=14	.
