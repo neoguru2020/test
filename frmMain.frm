@@ -52,7 +52,7 @@ Private Sub Timer1_Timer()
         If fnGetALLRateCBDBSQL = True Then
             dtDate = Date
             strRateCB = ""
-            Text1.text = Text1.text & "«а " & dtDate & " курсы обновлены." & vbCrLf
+            Text1.text = Text1.text & "За " & dtDate & " курсы обновлены." & vbCrLf
         Else
         
         End If
@@ -79,9 +79,9 @@ Function fnSetRateCBDBSQL(ByVal CharCode As String, ByVal dat As Date) As Boolea
         
         Dim strSQL As String
 110     If fnRateCBDBSQL(CharCode, dat) = 0 Then
-112         strSQL = "INSERT INTO [dbo].[ урс]([дата],[валюта],[курс]) VALUES ('" & dat & "','" & UCase(CharCode) & "'," & Replace$(strRate, ",", ".") & ")"
+112         strSQL = "INSERT INTO [dbo].[Курс]([дата],[валюта],[курс]) VALUES ('" & dat & "','" & UCase(CharCode) & "'," & Replace$(strRate, ",", ".") & ")"
         Else
-114         strSQL = "UPDATE [dbo].[ урс] SET [курс] = " & Replace$(strRate, ",", ".") & " WHERE [дата] = '" & dat & "' AND [валюта] = '" & UCase(CharCode) & "'"
+114         strSQL = "UPDATE [dbo].[Курс] SET [курс] = " & Replace$(strRate, ",", ".") & " WHERE [дата] = '" & dat & "' AND [валюта] = '" & UCase(CharCode) & "'"
         End If
     
         Dim strConnectionString As String
@@ -114,7 +114,7 @@ Function fnGetALLRateCBDBSQL() As Boolean
         Dim strConnectionString As String
         Dim strSQL As String
 104     strConnectionString = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=True;Persist Security Info=False;Initial Catalog=test;Data Source=UNIT1\SQLEXPRESS"
-106     strSQL = "SELECT [CharCode] FROM [dbo].[¬алюты]"
+106     strSQL = "SELECT [CharCode] FROM [dbo].[Валюты]"
         Dim Con As New ADODB.Connection
         Dim cmd As New ADODB.Command
         Dim rs As New ADODB.Recordset
@@ -209,7 +209,7 @@ Function fnRateCBDBSQL(ByVal CharCode As String, ByVal dat As Date) As Currency
         Dim strConnectionString As String
         Dim strSQL As String
 100     strConnectionString = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=True;Persist Security Info=False;Initial Catalog=test;Data Source=UNIT1\SQLEXPRESS"
-102     strSQL = "SELECT [курс] FROM [dbo].[ урс] WHERE [валюта] = '" & UCase(CharCode) & "' AND [дата] = '" & dat & "'"
+102     strSQL = "SELECT [курс] FROM [dbo].[Курс] WHERE [валюта] = '" & UCase(CharCode) & "' AND [дата] = '" & dat & "'"
         Dim Con As New ADODB.Connection
         Dim cmd As New ADODB.Command
         Dim rs As New ADODB.Recordset
